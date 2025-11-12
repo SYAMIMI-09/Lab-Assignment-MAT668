@@ -1,0 +1,1198 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/SYAMIMI-09/Lab-Assignment-MAT668/blob/master/Lab%201/Lab%201%20MAT668.ipynb%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "LNKHne5iCFBd"
+      },
+      "source": [
+        "# MAT668: Graph Theory with Applications\n",
+        "## Lab 1"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 569,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NhnPuxKiCFBk",
+        "outputId": "7abb1948-4797-4ab6-bd9a-0f8506066e18"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Populating the interactive namespace from numpy and matplotlib\n"
+          ]
+        }
+      ],
+      "source": [
+        "%pylab inline"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6rZIak48CFBl"
+      },
+      "source": [
+        "### Q1\n",
+        "Assign your name to a variable called \"my_name\" (Python Tutorial, pg. 8). <br />\n",
+        "Print your name using \"print\" function (Python Tutorial, pg. 9)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 570,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_1LzX2FGCFBm",
+        "outputId": "2f78d578-dbf3-4445-9952-50f7cfa4ee3f"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "NUR SYAMIMI BINTI ROSLAN\n"
+          ]
+        }
+      ],
+      "source": [
+        "my_name =\"NUR SYAMIMI BINTI ROSLAN\"\n",
+        "print(my_name)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "TcgVSmQnCFBm"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "tGA4gmaVCFBm"
+      },
+      "source": [
+        "### Q2\n",
+        "Define a list called \"nodes\" of 10 nodes (0, 1, ..., 9) using \"range\" function (Python Tutorial, pg. 16).<br />\n",
+        "Convert the range into a list using \"list\" function (Python Tutorial, pg. 12).<br />\n",
+        "Print the list of nodes using \"print\" function (Python Tutorial, pg. 9)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 571,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JWSWzrhqCFBn",
+        "outputId": "26788e3f-8904-4c95-e4c2-2f23cc04a0c8"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 571
+        }
+      ],
+      "source": [
+        "nodes = range(0,10)\n",
+        "list(nodes)\n",
+        "print(list(nodes))\n",
+        "[0,1,2,3,4,5,6,7,8,9]"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "8nHHTD5UCFBn"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ILrtrDDICFBo"
+      },
+      "source": [
+        "### Q3\n",
+        "Define a list (Python Tutorial, pg. 12) using your student ID named \"studid\".<br >\n",
+        "For example, if your student ID is \"2015234031\",<br />\n",
+        "your list is [2, 0, 1, 5, 2, 3, 4, 0, 3, 1].<br />\n",
+        "Print it using  \"print\" function (Python Tutorial, pg. 9)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 572,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Qf-H2pKpCFBo",
+        "outputId": "dc52a309-1af1-4543-a0f3-c26b416b0487"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[2, 0, 2, 4, 5, 4, 2, 7, 3, 9]\n"
+          ]
+        }
+      ],
+      "source": [
+        "studid = [2,0,2,4,5,4,2,7,3,9]\n",
+        "print(studid)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "DGdzNFVUCFBo"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5XOukrJ_CFBo"
+      },
+      "source": [
+        "### Q4\n",
+        "Use \"zip\" function (Python Tutorial, pg. 67) to create a sequence of tuple and called it \"edges\".<br />\n",
+        "Each tuple defines an edge between two nodes from the list nodes <br />\n",
+        "and the list studid (nodes[i], stud[i]).<br />\n",
+        "Then, use \"list\" function  (Python Tutorial, pg. 12) to convert \"edges\" sequence into a list.<br />\n",
+        "Print the list of edges using \"print\" function (Python Tutorial, pg. 9).<br />\n",
+        "Example:<br />\n",
+        "If nodes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] and  studid = [2, 0, 1, 5, 2, 3, 4, 0, 3, 1]<br />\n",
+        "then, edges = [(0, 2), (1, 0), (2, 1), (3, 5), (4, 2), (5, 3), (6, 4), (7, 0), (8, 3), (9, 1)]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 573,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YC1Dcb1PCFBp",
+        "outputId": "e5019877-8dcb-4219-af55-08da6d6691e0"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "edges = [(0, 2), (1, 0), (2, 2), (3, 4), (4, 5), (5, 4), (6, 2), (7, 7), (8, 3), (9, 9)]\n"
+          ]
+        }
+      ],
+      "source": [
+        "nodes = list(range(0,10))\n",
+        "studid = [2,0,2,4,5,4,2,7,3,9]\n",
+        "edges = list (zip(nodes, studid))\n",
+        "print(\"edges =\", edges)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "wwvzOQUfCFBp"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "__iHdojdCFBp"
+      },
+      "source": [
+        "### Q5\n",
+        "Import networkx module as nx.\n",
+        "\n",
+        "Then, create an empty graph G with no nodes and no edges (NetworkX Tutorial pg. 1)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 574,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gl-Np7B4CFBp",
+        "outputId": "f8ad291c-ae88-44eb-e7ee-315f58a93add"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 574
+        }
+      ],
+      "source": [
+        "import networkx as nx\n",
+        "G = nx.Graph()\n",
+        "G.graph"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "c7h_NUIZFz1r"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ASmOOmQ9CFBq"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "mBjOXRd5CFBq"
+      },
+      "source": [
+        "### Q6\n",
+        "Add \"edges\" to G using \"add_edges_from\" function (NetworkX Tutorial pg. 2)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 575,
+      "metadata": {
+        "collapsed": true,
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MmMoAqi6CFBq",
+        "outputId": "aee9ea33-bee8-43b9-adbd-39f7f6d45b19"
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "EdgeView([(0, 2), (0, 1), (2, 2), (2, 6), (3, 4), (3, 8), (4, 5), (7, 7), (9, 9)])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 575
+        }
+      ],
+      "source": [
+        "import networkx as nx\n",
+        "G=nx.Graph()\n",
+        "G.add_edge(0,2)\n",
+        "G.add_edges_from ([(0, 2), (1, 0), (2, 2), (3, 4), (4, 5), (5, 4), (6, 2), (7, 7), (8, 3), (9, 9)])\n",
+        "G.edges()"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "RYhx3Yv8CFBq"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6bFVwBXxCFBq"
+      },
+      "source": [
+        "### Q7\n",
+        "Print all nodes (NetworkX Tutorial pg. 3) using \"print\" function (Python Tutorial, pg. 9)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 576,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "57liq2xnCFBr",
+        "outputId": "11ed125e-bba0-46f3-f09d-5a464350c5e1"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n"
+          ]
+        }
+      ],
+      "source": [
+        "import networkx as nx\n",
+        "G=nx.Graph()\n",
+        "G.add_node(0)\n",
+        "G.add_nodes_from ([1,2,3,4,5,6,7,8,9])\n",
+        "print (G.nodes())"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "8FaAcQtUCFBr"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "cjDJCHvsCFBr"
+      },
+      "source": [
+        "### Q8\n",
+        "Print all edges (NetworkX Tutorial pg. 3) using \"print\" function (Python Tutorial, pg. 9)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 577,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KivcV98ACFBr",
+        "outputId": "da733c05-fa53-458f-c654-5ac7ca097247"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[(0, 2), (0, 1), (2, 2), (2, 6), (3, 4), (3, 8), (4, 5), (7, 7), (9, 9)]\n"
+          ]
+        }
+      ],
+      "source": [
+        "G=nx.Graph()\n",
+        "G.add_edge(0,2)\n",
+        "G.add_edges_from ([(0, 2), (1, 0), (2, 2), (3, 4), (4, 5), (5, 4), (6, 2), (7, 7), (8, 3), (9, 9)])\n",
+        "print(G.edges())"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "suyPtLYPCFBr"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5_sb73AaCFBr"
+      },
+      "source": [
+        "### Q9\n",
+        "Print the number of nodes using <br />\"number_of_nodes\" functon (NetworkX Tutorial pg. 3), and <br />\n",
+        "\"print\" function (Python Tutorial, pg. 9)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 578,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ax_81N6ZCFBr",
+        "outputId": "bbac329c-7b0c-4f6e-d944-eb6b91a8b00c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10\n"
+          ]
+        }
+      ],
+      "source": [
+        "import networkx as nx\n",
+        "G=nx.Graph()\n",
+        "G.add_node(0)\n",
+        "G.add_nodes_from ([1,2,3,4,5,6,7,8,9])\n",
+        "print(G.number_of_nodes())"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "uDspOXHsCFBs"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Azn__OnUCFBs"
+      },
+      "source": [
+        "### Q10\n",
+        "Print the number of edges using <br />\"number_of_edges\" function (NetworkX Tutorial pg. 3), and<br /> \"print\" function (Python Tutorial, pg. 9)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 579,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4cC1yU4oCFBs",
+        "outputId": "f2e80e78-eebe-4a10-ae2c-3fe5c6e23cba"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "9\n"
+          ]
+        }
+      ],
+      "source": [
+        "import networkx as nx\n",
+        "G=nx.Graph()\n",
+        "G.add_edge(0,2)\n",
+        "G.add_edges_from ([(0, 2), (1, 0), (2, 2), (3, 4), (4, 5), (5, 4), (6, 2), (7, 7), (8, 3), (9, 9)])\n",
+        "print(G.number_of_edges())"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "9XB6pg0DCFBs"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "collapsed": false,
+        "id": "aBDsO1_JCFBs"
+      },
+      "source": [
+        "### Q11\n",
+        "Print the list of nodes adjacent to node 2 (neighbour of node 2)<br />\n",
+        "using \"neighbors\" function (NetworkX Tutorial pg. 3) <br />\n",
+        "and \"print\" function (Python Tutorial, pg. 9)."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "M-X2ZvOJLuJB"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 580,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Z8oM22KaCFBs",
+        "outputId": "7509df42-b23c-4a85-f309-d6564d27b029"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0, 2, 6]\n"
+          ]
+        }
+      ],
+      "source": [
+        "import networkx as nx\n",
+        "G=nx.Graph()\n",
+        "G.add_node(0)\n",
+        "G.add_nodes_from ([1,2,3,4,5,6,7,8,9])\n",
+        "G.add_edge(0,2)\n",
+        "G.add_edges_from([(0, 2), (1, 0), (2, 2), (3, 4), (4, 5), (5, 4), (6, 2), (7, 7), (8, 3), (9, 9)])\n",
+        "print(list(G.neighbors(2)))\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "YibmIqjICFBs"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ylsoKESYCFBt"
+      },
+      "source": [
+        "### Q12\n",
+        "Print all the nodes and a list of their respective neighbours side by side using<br />\n",
+        "\"for loop\" (Python Tutorial, pg. 15), <br />\n",
+        "\"nodes\" function (NetworkX Tutorial pg. 3), <br />\n",
+        "\"neighbors\" function (NetworkX Tutorial pg. 3), and <br />\n",
+        "\"print\" function (Python Tutorial, pg. 9).\n",
+        "\n",
+        "Example:<br />\n",
+        "0 [1, 2, 7]<br />\n",
+        "1 [0, 9, 2]<br />\n",
+        "2 [0, 1, 4]<br />\n",
+        "3 [8, 5]<br />\n",
+        "4 [2, 6]<br />\n",
+        "5 [3]<br />\n",
+        "6 [4]<br />\n",
+        "7 [0]<br />\n",
+        "8 [3]<br />\n",
+        "9 [1]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 581,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lNmo0E7BCFBt",
+        "outputId": "b3dc8f1d-75bf-482b-9637-55a00096fbec"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0 [2, 1]\n",
+            "1 [0]\n",
+            "2 [0, 2, 6]\n",
+            "3 [4, 8]\n",
+            "4 [3, 5]\n",
+            "5 [4]\n",
+            "6 [2]\n",
+            "7 [7]\n",
+            "8 [3]\n",
+            "9 [9]\n"
+          ]
+        }
+      ],
+      "source": [
+        "import networkx as nx\n",
+        "G=nx.Graph()\n",
+        "G.graph\n",
+        "nodes=0,1,2,3,4,5,6,7,8,9\n",
+        "G.nodes()\n",
+        "G.edges()\n",
+        "G.add_edge(0,2)\n",
+        "e=(0,2)\n",
+        "G.add_edges_from([(0, 2), (1, 0), (2, 2), (3, 4), (4, 5), (5, 4), (6, 2), (7, 7), (8, 3), (9, 9)])\n",
+        "list([G.neighbors(0),G.neighbors(1),G.neighbors(2),G.neighbors(3),G.neighbors(4),G.neighbors(5),G.neighbors(6),G.neighbors(7),G.neighbors(8),G.neighbors(9)])\n",
+        "for i in range(len(nodes)):\n",
+        " print(i,list(G.neighbors(i)))"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "wii-NxV9CFBt"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "k_pKskBFMWPa"
+      },
+      "execution_count": 581,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "8tArc_I6CFBt"
+      },
+      "source": [
+        "### Q13\n",
+        "Print the degree for node 2 using the \"degree\" function (NetworkX Tutorial pg. 5), and <br />\n",
+        "\"print\" function (Python Tutorial, pg. 9).<br />\n",
+        "Please ignore parameter \"weight\"."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 582,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WcaJitP_CFBy",
+        "outputId": "007b02b1-b0ca-4de0-82ac-2c3087f1b90e"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "the list of adjacency for nodes 2 =  [0, 2, 6]\n",
+            "the degree for node 2 =  4\n"
+          ]
+        }
+      ],
+      "source": [
+        "import networkx as nx\n",
+        "G = nx.Graph()\n",
+        "G.add_edges_from([(0, 2), (1, 0), (2, 2), (3, 4), (4, 5), (5, 4), (6, 2), (7, 7), (8, 3), (9, 9)])\n",
+        "list(G.adj[2])\n",
+        "G.degree(2)\n",
+        "print(\"the list of adjacency for nodes 2 = \",list(G.adj[2]))\n",
+        "print(\"the degree for node 2 = \",G.degree(2))"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "OkPn-ORGCFBz"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ZYK5jjiCCFBz"
+      },
+      "source": [
+        "### Q14\n",
+        "Print all the nodes and their respective degree side by side using<br />\n",
+        "\"for loop\" (Python Tutorial, pg. 15), <br />\n",
+        "\"nodes\" function (NetworkX Tutorial pg. 3), <br />\n",
+        "\"degree\" function (NetworkX Tutorial pg. 5), and <br />\n",
+        "\"print\" function (Python Tutorial, pg. 9).\n",
+        "\n",
+        "Example:<br />\n",
+        "0 3<br />\n",
+        "1 3<br />\n",
+        "2 3<br />\n",
+        "3 2<br />\n",
+        "4 2<br />\n",
+        "5 1<br />\n",
+        "6 1<br />\n",
+        "7 1<br />\n",
+        "8 1<br />\n",
+        "9 1"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "fMu7ITZFCFBz"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 583,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vNEbOwRNCFB0",
+        "outputId": "49ab6318-8366-4ee2-ee15-2f0752a21c87"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0 2\n",
+            "1 1\n",
+            "2 4\n",
+            "3 2\n",
+            "4 2\n",
+            "5 1\n",
+            "6 1\n",
+            "7 2\n",
+            "8 1\n",
+            "9 2\n"
+          ]
+        }
+      ],
+      "source": [
+        "nodes=[0,1,2,3,4,5,6,7,8,9]\n",
+        "import networkx as nx\n",
+        "G=nx.Graph()\n",
+        "G.nodes()\n",
+        "G.edges()\n",
+        "G.add_edge(0,2)\n",
+        "e=(0,2)\n",
+        "G.add_edges_from ([(0, 2), (1, 0), (2, 2), (3, 4), (4, 5), (5, 4), (6, 2), (7, 7), (8, 3), (9, 9)])\n",
+        "list([G.degree(0),G.degree(1),G.degree(2),G.degree(3),G.degree(4),G.degree(5),G.degree(6),G.degree(7),G.degree(8),G.degree(9)])\n",
+        "for i in range(len(nodes)):\n",
+        "  print(i,G.degree(i))"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "bhIBmAKaCFB0"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "R0ZpN4O0CFB0"
+      },
+      "source": [
+        "### Q15\n",
+        "\"G.degree()\" is of type dict (Python Tutorial, pg. 31). <br />\n",
+        "\"G.degree().keys()\" will return all the nodes.<br />\n",
+        "\"G.degree().values()\" will return all the degrees.<br />\n",
+        "Read the Python Tutorial, pg. 31 on how to convert them to a list.\n",
+        "\n",
+        "Create a degree sequence in descending order using<br />\n",
+        "\"G.degree().values()\" function and \"list\" function (Python Tutorial, pg. 12) <br />\n",
+        "and assign it to variable called \"degree_sequence\"\n",
+        "\n",
+        "Print \"degree_sequence\" using \"print\" function (Python Tutorial, pg. 9).\n",
+        "\n",
+        "Note:\n",
+        "\n",
+        "Example: <br />\n",
+        "[3, 3, 3, 2, 2, 1, 1, 1, 1, 1]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 584,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fLii5TCUCFB1",
+        "outputId": "f66623c7-6f9f-4e94-ef86-977d454f0a03"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "degree sequence= [4, 2, 2, 2, 2, 2, 1, 1, 1, 1]\n"
+          ]
+        }
+      ],
+      "source": [
+        "import networkx as nx\n",
+        "G=nx.Graph()\n",
+        "G.nodes()\n",
+        "G.edges()\n",
+        "G.add_nodes_from([0,1,2,3,4,5,6,7,8,9])\n",
+        "G.add_edges_from([(0, 2), (1, 0), (2, 2), (3, 4), (4, 5), (5, 4), (6, 2), (7, 7), (8, 3), (9, 9)])\n",
+        "G.degree()\n",
+        "dict(G.degree()).values()\n",
+        "degree_sequence=sorted(dict(nx.degree(G)).values(),reverse=True)\n",
+        "print('degree sequence=',degree_sequence)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "QDdqIbGjCFB1"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "wgpQifNACFB1"
+      },
+      "source": [
+        "### Q16\n",
+        "Find the maximum vertex degree $\\Delta$ by applying<br />\n",
+        "\"max\" function to the list \"degree_sequence\" <br />\n",
+        "and assign it to variable \"max_degree\".\n",
+        "\n",
+        "Print variable \"max_degree\" using \"print\" function (Python Tutorial, pg. 9)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 585,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "boKzVesACFB1",
+        "outputId": "b60a1e5f-08c6-48ec-ea4b-f234b8bd2dda"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "max degree= 4\n"
+          ]
+        }
+      ],
+      "source": [
+        "max_degree=max(degree_sequence)\n",
+        "print ('max degree=',max_degree)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "gYs3-EZoOLyq"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "o3JmIippCFB1"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "FTgC6_PxOP_n"
+      },
+      "execution_count": 585,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "H8YTVp2ZCFB2"
+      },
+      "source": [
+        "### Q17\n",
+        "Find the minimum vertex degree $\\delta$ by applying<br />\n",
+        "\"min\" function to the list \"degree_sequence\"<br />\n",
+        "and assign it to variable \"min_degree\".\n",
+        "\n",
+        "Print variable \"min_degree\" using \"print\" function (Python Tutorial, pg. 9)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 586,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3O0eGG_TCFB2",
+        "outputId": "08a952d1-0b2a-4f39-9053-e8f9dacb9ec3"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "min degree= 1\n"
+          ]
+        }
+      ],
+      "source": [
+        "min_degree=min(degree_sequence)\n",
+        "print ('min degree=',min_degree)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "tICWbP0XCFB2"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "8DBjs8voCFB2"
+      },
+      "source": [
+        "### Q18\n",
+        "Calculate the sum of degree of all nodes<br />\n",
+        "\n",
+        "\"sum\" function to calculate the sum of all degree, and <br />\n",
+        "assign it to a variable called \"sum_degree\".\n",
+        "\n",
+        "Print \"sum_degree\" using \"print\" function (Python Tutorial, pg. 9).\n",
+        "\n",
+        "Example:<br />\n",
+        "Sum of degree of all nodes = 18<br />"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 587,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "uliLasXpCFB3",
+        "outputId": "9b6ce411-a645-4a35-eb30-529348edc311"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "sum degree= 18\n"
+          ]
+        }
+      ],
+      "source": [
+        "sum_degree=sum(degree_sequence)\n",
+        "print('sum degree=',sum_degree)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "G1opIW23CFB3"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "nEcl9C0JCFB3"
+      },
+      "source": [
+        "### Q19\n",
+        "Calculate the value of 2 times the total number of edges using <br />\n",
+        "\"number_of_edges\" function (NetworkX Tutorial pg. 3), and<br />\n",
+        "assign it to a variable called \"edges_times2\".\n",
+        "\n",
+        "Print \"edges_times2\" using \"print\" function (Python Tutorial, pg. 9).\n",
+        "\n",
+        "Example:<br />\n",
+        "edges_times2 = 2 x number_of_edges =  18"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 588,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KyMpdjBgCFB3",
+        "outputId": "63c5068c-a7fb-4945-8666-c8766b53aa7e"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "edges_times2= 18\n"
+          ]
+        }
+      ],
+      "source": [
+        "two_times_edges=(2*G.number_of_edges())\n",
+        "print('edges_times2=',two_times_edges)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Lu_rqqAsCFB3"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "UhNvLTUaCFB3"
+      },
+      "source": [
+        "### Q20\n",
+        "Verify Handshaking Lemma (The degree sum formula).<br />\n",
+        "$\\sum_{v \\in V} deg(v) = 2|E|$\n",
+        "\n",
+        "Hint: <br />\n",
+        "Is sum_degree = edges_times2? <br />\n",
+        "Print the value using \"print\" function (Python Tutorial, pg. 9)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 589,
+      "metadata": {
+        "id": "KBjdBUhFCFB4"
+      },
+      "outputs": [],
+      "source": [
+        "sum_degree = sum(degree_sequence)\n",
+        "two_times_edges = (2*G.number_of_edges())\n",
+        "if sum_degree is two_times_edges:\n",
+        " print('the handshaking lemma is verify')\n",
+        "if sum_degree is two_times_edges:\n",
+        " print('the handshaking lemma is verify')"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "EaY1o0_nCFB4"
+      },
+      "source": [
+        "<hr />"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5Fxlh9x-CFB4"
+      },
+      "source": [
+        "### Q21\n",
+        "Draw the graph G using \"draw\" function. Add \"with_labels=True\" argument to \"draw\" function to display the node's label."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 590,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 516
+        },
+        "id": "6eJB1s_ICFB4",
+        "outputId": "95ffbdd4-886c-4fa7-daf7-61376b9b1245"
+      },
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<Figure size 640x480 with 1 Axes>"
+            ],
+            "image/png": "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\n"
+          },
+          "metadata": {}
+        }
+      ],
+      "source": [
+        "import matplotlib .pyplot as plt\n",
+        "nx.draw(G, with_labels = True)\n",
+        "plt.show ()"
+      ]
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.5.1"
+    },
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
